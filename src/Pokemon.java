@@ -8,6 +8,12 @@ public class Pokemon {
         reader.readFile(filePath);
         HashSet<Character> characterSet = reader.getCharacterSet();
 
+        // int index = 0;
+        // for(Character c : characterSet) {
+        //     c.info();
+        //     index++;
+        // }
+        // System.out.println(index);
         try {
             HashSet<Character> hpSet = getHitPointList(-1, characterSet);
             print(hpSet);
@@ -16,7 +22,7 @@ public class Pokemon {
             System.out.println(e.getMessage());
         }
         System.out.println("Number of Legendary Pokemon: " + getIsLegendaryCount(characterSet));
-        TreeSet<Character> nameSet = getCharacterByFirstLetter('B', characterSet);
+        TreeSet<Character> nameSet = getCharacterByFirstLetter('A', characterSet);
         print(nameSet);
     }
 
@@ -39,8 +45,8 @@ public class Pokemon {
     }
 
     /**
-     * @param baseSet is characterSet in main
-     * @return the total count of characters that are marked as legendary
+     * @param baseSet - characterSet in main
+     * @return - total count of characters that are marked as legendary
      */
     public static int getIsLegendaryCount(HashSet<Character> baseSet) {
         int legendCount = 0;
